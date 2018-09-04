@@ -9,6 +9,10 @@
       <strong *ngIf="element.type === 'server'" style="color: blueviolet">{{ element.location }}</strong>
       <em *ngIf="element.type === 'blueprint'">{{ element.location }}</em>      
     </p>
+    <p>
+      <strong *ngIf="element.type === 'server'" style="color: brown">{{ osName }}</strong>
+      <em *ngIf="element.type === 'blueprint'">{{ osName }}</em>      
+    </p>
   </div>
 </div>
 <ng-content></ng-content>

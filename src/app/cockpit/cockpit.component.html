@@ -17,6 +17,9 @@
       <!-- using local reference instead of two-way binding -->
       <input type="text" class="form-control" #serverLocationInput>
 
+      <label>Server OS</label>
+      <input type="text" class="form-control" [(ngModel)]="os">
+
       <br>
       <button
         class="btn btn-primary"

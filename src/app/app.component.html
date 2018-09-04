@@ -5,13 +5,16 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change First Element</button>
+      <hr>
       <!-- setting srvElement or element property in server-element   -->
-      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
+      <!-- binding osName -->   
+      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement" [osName] = "serverElement.os">
           <div class="row">
               <div class="col-xs-12">
                 <p style="font-size:x-small">{{'this is displayed by ng-content'}}</p>
               </div>
-          </div>      
+          </div>             
       </app-server-element>
     </div>
   </div>

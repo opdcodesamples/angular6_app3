@@ -7,13 +7,14 @@ import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '
 })
 export class CockpitComponent implements OnInit {
 
-  @Output() serverCreated = new EventEmitter<{ serverName: string, serverContent: string, serverLocation: string}>();
-  @Output('bpCreated') blueprintCreated = new EventEmitter<{ serverName: string, serverContent: string, serverLocation: string}>();
+  @Output() serverCreated = new EventEmitter<{ serverName: string, serverContent: string, serverLocation: string, os: string}>();
+  @Output('bpCreated') blueprintCreated = new EventEmitter<{ serverName: string, serverContent: string, serverLocation: string, os: string}>();
   
   //newServerName = '';
   newServerContent = '';
   //newServerLocation = '';
   @ViewChild('serverLocationInput') serverLocationInput: ElementRef;
+  os = '';
 
   constructor() { }
 
@@ -27,7 +28,8 @@ export class CockpitComponent implements OnInit {
     this.serverCreated.emit({
       serverName: serverNameInput.value,
       serverContent: this.newServerContent,
-      serverLocation: this.serverLocationInput.nativeElement.value
+      serverLocation: this.serverLocationInput.nativeElement.value,
+      os: this.os
     })
   }
 
@@ -35,7 +37,8 @@ export class CockpitComponent implements OnInit {
     this.blueprintCreated.emit({
       serverName: serverNameInput.value,
       serverContent: this.newServerContent,
-      serverLocation: this.serverLocationInput.nativeElement.value
+      serverLocation: this.serverLocationInput.nativeElement.value,
+      os: this.os
     })
   }
 
