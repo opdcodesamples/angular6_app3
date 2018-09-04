@@ -1,12 +1,17 @@
 <div class="container">
-  <app-cockpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)" >
+  <app-cockpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)" >
 
   </app-cockpit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <!-- setting srvElement or element property in server-element   -->
       <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
-
+          <div class="row">
+              <div class="col-xs-12">
+                <p style="font-size:x-small">{{'this is displayed by ng-content'}}</p>
+              </div>
+          </div>      
       </app-server-element>
     </div>
   </div>
