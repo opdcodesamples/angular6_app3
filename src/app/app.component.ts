@@ -32,4 +32,8 @@ export class AppComponent {
     this.serverElements[0].os = 'Windows 10'
   }
 
+  onServerDestroy() {
+    this.serverElements.splice(0,1);
+  }
+
 }
