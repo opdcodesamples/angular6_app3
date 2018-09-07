@@ -8,14 +8,14 @@
       <input type="text" class="form-control" [(ngModel)]="newServerName">
       -->
       <!-- #serverName is local reference -->
-      <input type="text" class="form-control" #serverNameInput>
+      <input type="text" class="form-control" #serverNameInputLocalReference>
       
       <label>Server Content</label>
       <input type="text" class="form-control" [(ngModel)]="newServerContent">
 
       <label>Server Location</label>
       <!-- using local reference instead of two-way binding -->
-      <input type="text" class="form-control" #serverLocationInput>
+      <input type="text" class="form-control" #serverLocationInputLocalReference>
 
       <label>Server OS</label>
       <input type="text" class="form-control" [(ngModel)]="os">
@@ -23,9 +23,9 @@
       <br>
       <button
         class="btn btn-primary"
-        (click)="onAddServer(serverNameInput)" style="margin: 5px">Add Server</button>
+        (click)="onAddServer(serverNameInputLocalReference)" style="margin: 5px">Add Server</button>
       <button
         class="btn btn-primary"
-        (click)="onAddBlueprint(serverNameInput)" style="margin: 5px">Add Server Blueprint</button>
+        (click)="onAddBlueprint(serverNameInputLocalReference)" style="margin: 5px">Add Server Blueprint</button>
     </div>
   </div>

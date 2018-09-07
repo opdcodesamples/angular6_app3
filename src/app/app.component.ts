@@ -28,7 +28,7 @@ export class AppComponent {
      });
   }
 
-  onChangeFirst() {
+  onChangeOS() {
     this.serverElements[0].os = 'Windows 10'
   }
 

@@ -13,7 +13,7 @@ export class CockpitComponent implements OnInit {
   //newServerName = '';
   newServerContent = '';
   //newServerLocation = '';
-  @ViewChild('serverLocationInput') serverLocationInput: ElementRef;
+  @ViewChild('serverLocationInputLocalReference') serverLocationInputLocalReference: ElementRef;
   os = '';
 
   constructor() { }
@@ -21,23 +21,31 @@ export class CockpitComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddServer(serverNameInput: HTMLInputElement) {
-    //console.log(serverNameInput) // local reference gives us the element
-    //console.log(serverNameInput.value) // local reference value
-    console.log(this.serverLocationInput) // 
+  onAddServer(serverNameInputLocalReference: HTMLInputElement) {
+    console.log('serverNameInputLocalReference ===> ')
+    console.log(serverNameInputLocalReference) // local reference gives us the element
+    console.log('serverNameInputLocalReference.value ===> ') 
+    console.log(serverNameInputLocalReference.value) // local reference value
+    console.log('this.serverLocationInputLocalReference ===> ')
+    console.log(this.serverLocationInputLocalReference) // 
+    console.log('this.serverLocationInputLocalReference.nativeElement ===> ')
+    console.log(this.serverLocationInputLocalReference.nativeElement) // 
+    console.log('this.serverLocationInputLocalReference.nativeElement.value ===> ')
+    console.log(this.serverLocationInputLocalReference.nativeElement.value) // 
+
     this.serverCreated.emit({
-      serverName: serverNameInput.value,
+      serverName: serverNameInputLocalReference.value,
       serverContent: this.newServerContent,
-      serverLocation: this.serverLocationInput.nativeElement.value,
+      serverLocation: this.serverLocationInputLocalReference.nativeElement.value,
       os: this.os
     })
   }
 
-  onAddBlueprint(serverNameInput: HTMLInputElement) {
+  onAddBlueprint(serverNameInputLocalReference: HTMLInputElement) {
     this.blueprintCreated.emit({
-      serverName: serverNameInput.value,
+      serverName: serverNameInputLocalReference.value,
       serverContent: this.newServerContent,
-      serverLocation: this.serverLocationInput.nativeElement.value,
+      serverLocation: this.serverLocationInputLocalReference.nativeElement.value,
       os: this.os
     })
   }
