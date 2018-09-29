@@ -12,7 +12,7 @@
       <!-- binding osName -->   
       <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement" [osName] = "serverElement.os">
           <!-- adding another local reference here -->
-          <!-- this local reference will NOT be part of the view, 
+          <!-- this local reference will NOT be part of this view, 
             instead it will be part of the content in server element -->
 
           <!--- only hard coded values can be captured in ngAfterContentInit. 

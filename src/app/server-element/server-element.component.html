@@ -8,7 +8,9 @@
     </p>
     <p>
       <strong *ngIf="element.type === 'server'" style="color: blueviolet">{{ element.location }}</strong>
-      <em *ngIf="element.type === 'blueprint'">{{ element.location }}</em>      
+      <em *ngIf="element.type === 'blueprint'">{{ element.location }}</em>    
+      <!-- displayed by additionalContentLocalReference -->
+      <ng-content></ng-content>  
     </p>
     <p>
       <strong *ngIf="element.type === 'server'" style="color: brown">{{ osName }}</strong>
@@ -16,4 +18,4 @@
     </p>
   </div>
 </div>
-<ng-content></ng-content>
+
